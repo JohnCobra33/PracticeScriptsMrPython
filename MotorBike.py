@@ -1,11 +1,16 @@
-##"Two motorcycles are traveling at different speeds (vel1 and vel2) and are separated by a distance 'dis.' The motorcycle behind is traveling at a higher speed than the first one. A Python script is requested to prompt the user for the distance between the motorcycles in kilometers and their respective speeds. The script should then return the time it will take for motorcycle 2 to catch up with motorcycle 1."
+#Declaramos las variables
+Distancia = int(input("Introduce la distancia en Km: "))
+Moto1 = int(input("Introduce la velocidad de la moto 1 en Km/h: "))
+Moto2 = int(input("Introduce la velocidad de la moto 2 en Km/h: "))
 
-Distance = int(input("Distance in KM: "))
+velomoto = Moto2 - Moto1
 
-Motorcycle1 = int(input("Speed of Motorcycle 1: "))
+# Calcula el tiempo en horas y minutos
+tiempo_en_horas = Distancia / velomoto
+tiempo_en_minutos = tiempo_en_horas * 60
 
-Motorcycle2 = int(input("Speed of Motorcycle 2: "))
+# Divide el tiempo total en horas y minutos
+horas = int(tiempo_en_horas)
+minutos = int((tiempo_en_minutos - horas * 60))
 
-time = (Distance / (Motorcycle2 - Motorcycle1))
-
-print("The motorcycles will meet in:", int(time * 60), "minutes")
+print("Las motos se encontrarán en: {} horas y {} minutos".format(horas, minutos))
