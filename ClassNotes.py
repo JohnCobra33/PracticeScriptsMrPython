@@ -1,19 +1,23 @@
-#"Create a script that takes 5 grades from a student through the keyboard (ranging from 0 to 10). Next, it should display all the grades, the average grade, the highest grade achieved, and the lowest grade."
-grades = []
+notas = []
 
-for i in range(1, 6):
-    grade = int(input("Enter grade %d: " % i))
+for indice in range(1, 6):
+    nota_valida = False
 
-    while grade < 0 or grade > 10:
-        print("The grade must be between 0 and 10.")
-        grade = int(input("Enter grade %d: " % i))
+    while not nota_valida:
+        nota = int(input("Introduce la nota %d:" % indice))
 
-    grades.append(grade)
+        if nota < 0 or nota > 10:
+            print("La opción que has elegido no es válida (tiene que ser entre 0 y 10)")
+        else:
+            nota_valida = True
+    
 
-print("Grades: ", end="")
-for g in grades:
-    print(g, " ", end="")
+    notas.append(nota)
 
-print("\nAverage grade: ", sum(grades) / len(grades))
-print("Maximum grade: ", max(grades))
-print("Minimum grade: ", min(grades))
+print("Notas: ", end="")
+for nota in notas:
+    print(nota, " ", end="")
+
+print("\nNota Media: ", sum(notas) / len(notas))
+print("Nota máxima: ", max(notas))
+print("Nota mínima: ", min(notas))
