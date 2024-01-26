@@ -1,14 +1,21 @@
-#"Create a script that creates a two-dimensional array of size 5x5 named 'diagonal'. The elements on its diagonals should be 1, and the rest should be 0. Display the content of the array on the screen."
-def create_diagonal_matrix(num_rows, num_cols):
-    matrix = [[0 for _ in range(num_cols)] for _ in range(num_rows)]
-    for row in range(num_rows):
-        for col in range(num_cols):
-            if row == col or row == (num_rows - 1) - col:
-                matrix[row][col] = 1
-    return matrix
+matriz = []
 
-num_rows = 5
-num_cols = 5
-matrix = create_diagonal_matrix(num_rows, num_cols)
-for row in matrix:
-    print(*row)
+# Crear la matriz 5x5
+for indice_fila in range(0, 5):
+    fila = []
+    
+    for indice_col in range(0, 5):
+        # Si estoy en alguna diagonal inicializo a 1
+        if indice_fila == indice_col or indice_fila == 4 - indice_col:
+            fila.append(1)
+        # No estoy en diagonal, inicializo a 0
+        else:
+            fila.append(0)
+    
+    matriz.append(fila)
+
+# Recorro para mostrar tabla
+for fila in matriz:
+    for elemento in fila:
+        print(elemento, " ", end="")
+    print()
